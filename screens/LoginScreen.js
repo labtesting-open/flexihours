@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import { auth } from '../firebase'
 
 const LoginScreen = () => {
@@ -44,6 +44,13 @@ const LoginScreen = () => {
       style={styles.container}
       behavior="padding"
     >
+      <View>
+      <Image
+        style={styles.logo}
+        source={require('../assets/flexihours-logo.jpg')}
+      />
+      </View>
+
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -125,4 +132,9 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 16,
   },
+  logo:{
+    width: 300,
+    height: 100,
+    resizeMode: 'stretch'
+  }
 })
